@@ -18,6 +18,7 @@ import {
 
 
   import TopBar from '../components/topbar'
+  import Menu from '../components/menu'
 
   const Page1 = (props) => {
 
@@ -25,6 +26,7 @@ import {
     return(
         <>
             <TopBar />
+            <Menu />
             <Container>
                 <Row>
                     <Col className="ml-auto mr-auto" md="6">

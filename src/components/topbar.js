@@ -19,7 +19,7 @@ import {
   import beyazmasa from '../assets/img/logo_head@2x.png';
   import youtube from '../assets/img/youtube.svg';
 
-  const Page1 = (props) => {
+  const TopBar = (props) => {
 
     const styles = {
         main: {
@@ -55,4 +55,4 @@ import {
     )
   }
 
-  export default Page1;
+  export default TopBar;
