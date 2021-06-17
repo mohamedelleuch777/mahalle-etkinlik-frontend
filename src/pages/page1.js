@@ -21,9 +21,16 @@ import {
 
 
     return(
-        <div>
-            fejn
-        </div>
+        <Container>
+            <Row>
+                <Col className="ml-auto mr-auto" md="6">
+                    test col 1
+                </Col>
+                <Col className="ml-auto mr-auto" md="6">
+                    test col 2
+                </Col>
+            </Row>
+        </Container>
     )
   }
 
