@@ -1,12 +1,22 @@
 import React from 'react';
+import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Page1 from './pages/page1'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    
+    <BrowserRouter>
+        <Switch>
+          {/* <Route path="/index" render={(props) => <Main {...props} />} /> */}
+          <Route
+            path="/"
+            render={(props) => <Page1 {...props} />}
+          />
+        </Switch>
+      </BrowserRouter>,
   </React.StrictMode>,
   document.getElementById('root')
 );
