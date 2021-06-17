@@ -1,5 +1,4 @@
 import React from 'react';
-
 // reactstrap components
 import {
     Button,
@@ -17,20 +16,26 @@ import {
     Container,
   } from "reactstrap";
 
+
+  import TopBar from '../components/topbar'
+
   const Page1 = (props) => {
 
 
     return(
-        <Container>
-            <Row>
-                <Col className="ml-auto mr-auto" md="6">
-                    test col 1
-                </Col>
-                <Col className="ml-auto mr-auto" md="6">
-                    test col 2
-                </Col>
-            </Row>
-        </Container>
+        <>
+            <TopBar />
+            <Container>
+                <Row>
+                    <Col className="ml-auto mr-auto" md="6">
+                        test col 1
+                    </Col>
+                    <Col className="ml-auto mr-auto" md="6">
+                        test col 2
+                    </Col>
+                </Row>
+            </Container>
+        </>
     )
   }
 
