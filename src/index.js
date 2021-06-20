@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import './index.css';
-import Page1 from './pages/page1'
+import MainPage from './pages/main_page'
 import reportWebVitals from './reportWebVitals';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "./assets/css/bootstrap.min.css";
@@ -15,7 +15,7 @@ ReactDOM.render(
           {/* <Route path="/index" render={(props) => <Main {...props} />} /> */}
           <Route
             path="/*"
-            render={(props) => <Page1 {...props} />}
+            render={(props) => <MainPage {...props} />}
           />
         </Switch>
       </BrowserRouter>,
