@@ -1,71 +1,49 @@
 import React from 'react';
-// reactstrap components
-import {
-    Button,
-    Label,
-    FormGroup,
-    Input,
-    NavItem,
-    NavLink,
-    Nav,
-    TabContent,
-    TabPane,
-    Row,
-    Col,
-    Table,
-    Container,
-  } from "reactstrap";
-import Carousel from 'react-bootstrap/Carousel'
+
 
 
 import TopBar from '../components/topbar'
 import Menu from '../components/menu'
 import Footer from '../components/footer'
+import SliderTop from '../components/slider_top'
+import { Container } from 'reactstrap';
 
-import slider_image1 from '../assets/img/slider1@2x.png'
-import slider_image2 from '../assets/img/slider1@2x.png'
-import slider_image3 from '../assets/img/slider1@2x.png'
+const MainPage = (props) => {
 
-const Page1 = (props) => {
-
+    const styles = {
+        title: {
+            color: "#475677",
+            fontSize: 60,
+            fontFamily: 'Poppins',
+            textAlign: "center",
+            margin: "60px 0",
+            fontWeight: 500
+        },
+        paragraph: {
+            fontSize: 19,
+            color: "#7D8597",
+            fontFamily: 'Poppins',
+            textAlign: "center"
+        }
+    }
 
 return(
     <>
         <TopBar />
         <Menu />
-        <Container style={{margin:0,maxWidth:9999999}}>
-            <Row>
-                <Carousel>
-                    <Carousel.Item>
-                        <img className="d-block w-100" src={slider_image1} alt="First slide" />
-                        <Carousel.Caption>
-                        <h3>Bahçelievler Mahalle Evi Açıldı</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img className="d-block w-100" src={slider_image2} alt="Second slide" />
-
-                        <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img className="d-block w-100" src={slider_image3} alt="Third slide"/>
-
-                        <Carousel.Caption>
-                        <h3>This is the third slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                </Carousel>
-            </Row>
-
+        <SliderTop />
+        <Container>
+            <h2 style={styles.title}>Sevgili Mahallelimiz</h2>
+            <p style={styles.paragraph}>
+                Mahalle Evi aracılığı ile mahalle ölçeğinde kadın, çocuk, yaşlı ve gençlerin sosyal ve kültürel hayata katılımının arttırılması, eğitim destek, psikososyal gelişim ve kültür-sanat faaliyetlerinin İstanbul'un her noktasına yayılması, mahallelinin belediye hizmetleri ve sosyal hizmetlere hak temelli erişebilmesi, mahalle kültürünü canlandırarak toplumsal dayanışmanın güçlendirilmesi hedeflenmektedir.
+            </p>
+            <p style={styles.paragraph}>
+                Tüm bu hedefler doğrultusunda gönüllüler, okullar ve sivil toplum kuruluşlarıyla işbirliği yapmaktayız. Gönüllülerimiz, fırsat eşitliği oluşturma yolunda daha fazla kadına, çocuğa, yaşlıya ve gence ulaşmamıza katkı sağlamakta ve bizlere destek vermekte; bu gönüllülerimize <strong>"İstanbul Gönüllüleri"</strong> gönüllü ağı üzerinden ulaşmaktayız.
+            </p>
         </Container>
         <Footer/>
     </>
 )
 }
 
-export default Page1;
+export default MainPage;
