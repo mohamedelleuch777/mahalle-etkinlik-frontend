@@ -6,6 +6,7 @@ import TopBar from '../components/topbar'
 import Menu from '../components/menu'
 import Footer from '../components/footer'
 import SliderTop from '../components/slider_top'
+import MahalleCounter from '../components/mahalle_counter'
 import { Container } from 'reactstrap';
 
 const MainPage = (props) => {
@@ -41,6 +42,7 @@ return(
                 Tüm bu hedefler doğrultusunda gönüllüler, okullar ve sivil toplum kuruluşlarıyla işbirliği yapmaktayız. Gönüllülerimiz, fırsat eşitliği oluşturma yolunda daha fazla kadına, çocuğa, yaşlıya ve gence ulaşmamıza katkı sağlamakta ve bizlere destek vermekte; bu gönüllülerimize <strong>"İstanbul Gönüllüleri"</strong> gönüllü ağı üzerinden ulaşmaktayız.
             </p>
         </Container>
+        <MahalleCounter />
         <Footer/>
     </>
 )
