@@ -23,7 +23,7 @@ import slider_image3 from '../assets/img/slider1@2x.png'
 
 const SliderTop = (props) => {
     return (
-        <Container style={{margin:0,maxWidth:9999999}}>
+        <Container className="full-width" style={{margin:0,maxWidth:9999999}}>
             <Row>
                 <Carousel className="slider-carousel">
                     <Carousel.Item>
