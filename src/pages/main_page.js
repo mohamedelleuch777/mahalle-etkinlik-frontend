@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
+import useWindowSize from '../hooks/resize'
 
 
 
@@ -7,10 +8,13 @@ import Menu from '../components/menu'
 import Footer from '../components/footer'
 import SliderTop from '../components/slider_top'
 import MahalleCounter from '../components/mahalle_counter'
-import MahalleBasvuru from '../components/news'
+import MahalleBasvuru from '../components/mahalle_basvuru'
 import { Container } from 'reactstrap';
 
 const MainPage = (props) => {
+    const [isMobile, setismobile] = useState(false);
+    const [width, height] = useWindowSize();
+    
 
     const styles = {
         title: {
@@ -28,6 +32,15 @@ const MainPage = (props) => {
             textAlign: "center"
         }
     }
+
+    useEffect( ()=>{
+        // console.log("w",width,"h",height);
+        if(width<=992) {
+            setismobile(true);
+        } else {
+            setismobile(false);
+        }
+    },[width,height])
 
 return(
     <>

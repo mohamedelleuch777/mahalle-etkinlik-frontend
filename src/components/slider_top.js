@@ -25,7 +25,7 @@ const SliderTop = (props) => {
     return (
         <Container style={{margin:0,maxWidth:9999999}}>
             <Row>
-                <Carousel>
+                <Carousel className="slider-carousel">
                     <Carousel.Item>
                         <img className="d-block w-100" src={slider_image1} alt="First slide" />
                         <Carousel.Caption>

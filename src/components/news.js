@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 // reactstrap components
 import {
     Button,
@@ -16,81 +16,136 @@ import {
     Container,
   } from "reactstrap";
 import Carousel from 'react-bootstrap/Carousel'
+import useWindowSize from '../hooks/resize'
 
 
 const MahalleBasvuru = (props) => {
+    const [isMobile, setismobile] = useState(false);
+    const [width, height] = useWindowSize();
 
     const styles = {
         container: {
-            margin: "60px auto"
+            margin: "60px auto",
+            padding: 20,
+            boxShadow: "#00000029 0 0 15px 0px",
+            borderRadius: 12
         },
-        columns: {
-            textAlign: "center"
+        row: {
+            display: "block"
         },
-        number: {
+        title: {
             color: "#475677",
-            fontSize: 80,
+            fontSize: 21,
+            fontWeight: 600,
             fontFamily: "Poppins",
-            fontWeight: 900,
-            justifyContent: "center"
-        },
-        description: {
-            color: "#7D8597",
-            fontSize: 18,
-            fontWeight: 300,
-            justifyContent: "center"
-        },
-        button: {
-            padding: "14px 22px",
-            backgroundColor: "#3A9544",
-            borderRaidus: 6,
-            fontSize: 24,
-            fontFamily: 'Poppins',
-            fontWeight: 700
-        },
-        buttonParentRow: {
-            justifyContent: "center",
-            marginTop: 60
+            textAlign: "left",
+            paddingLeft: 24
         }
     }
+
+    useEffect( ()=>{
+        // console.log("w",width,"h",height);
+        if(width<=992) {
+            setismobile(true);
+        } else {
+            setismobile(false);
+        }
+    },[width,height])
+
     return(
         <>
-            <Container style={styles.container}>
-                <Row>
-                    <Col style={styles.columns} md="3">
-                        <Container>
-                            <Row style={styles.number}>24</Row>
-                            <Row style={styles.description}>Eğitim Atölyesi</Row>
-                        </Container>
-                    </Col>
-                    <Col style={styles.columns} md="3">
-                        <Container>
-                            <Row style={styles.number}>8</Row>
-                            <Row style={styles.description}>Mahalle Evi</Row>
-                        </Container>
-                    </Col>
-                    <Col style={styles.columns} md="3">
-                        <Container>
-                            <Row style={styles.number}>150</Row>
-                            <Row style={styles.description}>Eğitim Gönüllüsü</Row>
-                        </Container>
-                    </Col>
-                    <Col style={styles.columns} md="3">
-                        <Container>
-                            <Row style={styles.number}>1820</Row>
-                            <Row style={styles.description}>Mahalle Evi Sakini</Row>
-                        </Container>
-                    </Col>
-                </Row>
-                <Row style={styles.buttonParentRow}>
-                    <Button style={styles.button}>
-                        Mahalleli veya Gönüllü olmak için tıklayın
-                    </Button>
-                </Row>
-            </Container>
-            <hr style={{borderBottom: "5px solid #CBD7E2"}} />
+            {
+                isMobile || <Container style={styles.container}>
+                    <Row style={styles.row}>
+                        <h3 style={styles.title}>Duyurular</h3>
+                        <hr style={{borderBottom: "0px solid #CBD7E2"}} />
+                        <Carousel className="news-carousel">
+                            <Carousel.Item>
+                                {/* <Carousel.Caption>
+                                <h3>Bahçelievler Mahalle Evi Açıldı</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                </Carousel.Caption> */}
+
+                                <Item
+                                    title="Bahçelievler Mahalle Evi Açıldı"
+                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus libero orci, congue lacinia sed, rhoncus et augue."
+                                />
+                                <Item 
+                                    title="Zafer Mahalle Evi Açıldı"
+                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus libero orci, congue lacinia sed, rhoncus et augue."
+                                />
+                                <Item 
+                                    title="Bahçelievler Mahalle Evi Açıldı"
+                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus libero orci, congue lacinia sed, rhoncus et augue."
+                                />
+                                <Item 
+                                    title="Zafer Mahalle Evi Açıldı"
+                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus libero orci, congue lacinia sed, rhoncus et augue."
+                                />
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <Item
+                                    title="Zafer Mahalle Evi Açıldı"
+                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus libero orci, congue lacinia sed, rhoncus et augue."
+                                />
+                                <Item 
+                                    title="Bahçelievler Mahalle Evi Açıldı"
+                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus libero orci, congue lacinia sed, rhoncus et augue."
+                                />
+                                <Item 
+                                    title="Zafer Mahalle Evi Açıldı"
+                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus libero orci, congue lacinia sed, rhoncus et augue."
+                                />
+                                <Item 
+                                    title="Bahçelievler Mahalle Evi Açıldı"
+                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus libero orci, congue lacinia sed, rhoncus et augue."
+                                />
+                            </Carousel.Item>
+                        </Carousel>
+
+                        
+                    </Row>
+                </Container>
+            }
         </>
     )
 }
 
 export default MahalleBasvuru;
+
+
+const Item = (props) => {
+
+    const styles = {
+        title: {
+            color: "#475677",
+            fontFamily: "Poppins",
+            fontSize: 14,
+            whiteSpace: "nowrap",
+            textOverflow: "ellipsis",
+            overflow: "hidden"
+        },
+        paragraph: {
+            color: "#383D46",
+            fontFamily: "Poppins",
+            fontSize: 12,
+            // textOverflow: "ellipsis",
+            overflow: "hidden",
+            height: 55
+        },
+        link: {
+            position: "absolute",
+            top: 55,
+            right: 0,
+            backgroundColor: "white"
+        }
+    }
+
+    return (
+        <div className="news-sub-item">
+            <h4 className="title" style={styles.title}>{props.title}</h4>
+            <p style={styles.paragraph}>{props.text}</p>
+            <a style={styles.link} href="#">...Devamı</a>
+        </div>
+    )
+}

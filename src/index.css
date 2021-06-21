@@ -21,7 +21,7 @@ code {
   opacity: 1;
 }
 
-.carousel .carousel-indicators li {
+.slider-carousel .carousel-indicators li {
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -29,7 +29,7 @@ code {
   opacity: 1;
 }
 
-.carousel .carousel-indicators li.active {
+.slider-carousel .carousel-indicators li.active {
   width: 28px;
   height: 28px;
   background-color: green;
@@ -37,7 +37,7 @@ code {
   margin-top: 0px;
 }
 
-.carousel .carousel-caption {
+.slider-carousel .carousel-caption {
   font-family: "poppins";
   right: 0% !important;
   left: 70% !important;
@@ -57,16 +57,16 @@ code {
   justify-content: space-evenly;
 }
 
-.carousel .carousel-caption h3 {
+.slider-carousel .carousel-caption h3 {
   font-size: 2.4vw;
   /* max-height: 66px; */
 }
 
-.carousel .carousel-caption p {
+.slider-carousel .carousel-caption p {
   font-size: 1.2vw;
 }
 
-.carousel a.carousel-control-prev span, .carousel a.carousel-control-next span {
+.slider-carousel a.carousel-control-prev span, .slider-carousel a.carousel-control-next span {
   display: none;
 }
 
@@ -75,12 +75,65 @@ code {
   outline: none;
 }
 
+.news-sub-item {
+  position: relative;
+  text-align: left;
+  margin: 20px 50px;
+}
+
+.news-sub-item .title::before {
+  content: " ";
+  width: 14px;
+  height: 14px;
+  background-color:#0088CC;
+  position: absolute;
+  top: 0px;
+  left: -24px;
+  border-radius: 1px;
+}
+
 @media screen and (min-width: 1280px)  {
-  .carousel .carousel-caption h3 {
+  .slider-carousel .carousel-caption h3 {
     font-size: 36px;
   }
 
-  .carousel .carousel-caption p {
+  .slider-carousel .carousel-caption p {
     font-size: 14px;
+  }
+}
+
+/* news carousel */
+
+.news-carousel .carousel-indicators {
+  bottom: -30px;
+}
+
+.news-carousel .carousel-indicators li {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #322F2F;
+  opacity: .2;
+}
+
+.news-carousel .carousel-indicators li.active {
+  width: 14px;
+  height: 14px;
+  background-color: #707070;
+  /* border: 9px solid #fff; */
+  margin-top: 0px;
+  opacity: 1;
+}
+
+
+@media screen and (min-width: 1350px)  {
+  .container {
+    max-width: 1350px !important;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1349px)  {
+  .container {
+    max-width: 1100px !important;
   }
 }
