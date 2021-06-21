@@ -68,7 +68,12 @@ code {
 
 .carousel a.carousel-control-prev span, .carousel a.carousel-control-next span {
   display: none;
-} 
+}
+
+.hamburger-button {
+  border: none !important;
+  outline: none;
+}
 
 @media screen and (min-width: 1280px)  {
   .carousel .carousel-caption h3 {

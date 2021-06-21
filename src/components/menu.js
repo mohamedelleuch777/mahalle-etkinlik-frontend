@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import useWindowSize from '../hooks/resize'
 
 // reactstrap components
 import {
@@ -23,6 +24,8 @@ import {
     Table,
     Container,
     Navbar,
+    Collapse, 
+    NavbarToggler
   } from "reactstrap";
   import ibb_logo from '../assets/img/ibb-logo.svg';
   import mah_ev_logo from '../assets/img/mah-ev-logo.svg';
@@ -32,6 +35,11 @@ import {
     const [dropdownOpen1, setDropdownOpen1] = useState(false);
     const [dropdownOpen2, setDropdownOpen2] = useState(false);
     const [selectedMenu, setselectedMenu] = useState(1);
+    const [isMobile, setismobile] = useState(false);
+    const [width, height] = useWindowSize();
+    const [collapsed, setCollapsed] = useState(true);
+  
+    const toggleNavbar = () => setCollapsed(!collapsed);
 
     const styles = {
         main: {
@@ -52,7 +60,7 @@ import {
             marginRight: "10%"
         },
         divContainer: {
-            margin: "0px 5%",
+            margin: "0px 2%",
             width: "100%",
             display: "flex",
             justifyContent: "space-between",
@@ -76,7 +84,8 @@ import {
             boxShadow: "none",
             // minWidth: 140,
             fontFamily: "poppins",
-            fontSize: 14
+            fontSize: 14,
+            whiteSpace: "noWrap"
         },
         bar: {
             border: "3px solid #7294D5",
@@ -111,116 +120,155 @@ import {
         setselectedMenu(val);
     }
 
+    useEffect( ()=>{
+        // console.log("w",width,"h",height);
+        if(width<=992) {
+            setismobile(true);
+        } else {
+            setismobile(false);
+        }
+    },[width,height])
+
 
     return(
-        <Navbar style={{padding:0,height:120,borderBottom: "5px solid #CBD7E2"}}>
-     
-            <div style= {styles.divContainer}>
-            {/* <Container> */}
-                <div style={styles.main}>
-                    <img style={styles.svgItems} src={ibb_logo} alt="ibb logo" />
-                    <img style={{...styles.svgItems,marginLeft:36}} src={mah_ev_logo} alt="mah ev logo" />
-                </div>
-                <Dropdown onClick={()=>updateSelectedItem(1)}>
-                    <DropdownToggle style={{
-                            ...styles.dropdown,
-                            backgroundColor: selectedMenu == 1 && "#F8FAFD" || "#00000000",
-                            color: selectedMenu == 1 && "#7294D5" || "#000",
-                            border: selectedMenu == 1 && "1px solid #CBD7E2" || "none"
-                        }}>
-                        Ana Sayfa
-                        {selectedMenu == 1 && <hr style={styles.bar}></hr>}
-                    </DropdownToggle>
-                </Dropdown>
+        <>
+            {/* normal menu for desktop */}
+            {
+                isMobile || <Navbar style={{padding:0,height:120,borderBottom: "5px solid #CBD7E2"}}>
+            
+                    <div style= {styles.divContainer}>
+                    {/* <Container> */}
+                        <div style={styles.main}>
+                            <img style={styles.svgItems} src={ibb_logo} alt="ibb logo" />
+                            <img style={{...styles.svgItems,marginLeft:36}} src={mah_ev_logo} alt="mah ev logo" />
+                        </div>
+                        <Dropdown onClick={()=>updateSelectedItem(1)}>
+                            <DropdownToggle style={{
+                                    ...styles.dropdown,
+                                    backgroundColor: selectedMenu == 1 && "#F8FAFD" || "#00000000",
+                                    color: selectedMenu == 1 && "#7294D5" || "#000",
+                                    border: selectedMenu == 1 && "1px solid #CBD7E2" || "none"
+                                }}>
+                                Ana Sayfa
+                                {selectedMenu == 1 && <hr style={styles.bar}></hr>}
+                            </DropdownToggle>
+                        </Dropdown>
 
-                <Dropdown onClick={()=>updateSelectedItem(2)}>
-                    <DropdownToggle style={{
-                            ...styles.dropdown,
-                            backgroundColor: selectedMenu == 2 && "#F8FAFD" || "#00000000",
-                            color: selectedMenu == 2 && "#7294D5" || "#000",
-                            border: selectedMenu == 2 && "1px solid #CBD7E2" || "none"
-                        }}>
-                        Başkanın Mesajı
-                        {selectedMenu == 2 && <hr style={styles.bar}></hr>}
-                    </DropdownToggle>
-                </Dropdown>
+                        <Dropdown onClick={()=>updateSelectedItem(2)}>
+                            <DropdownToggle style={{
+                                    ...styles.dropdown,
+                                    backgroundColor: selectedMenu == 2 && "#F8FAFD" || "#00000000",
+                                    color: selectedMenu == 2 && "#7294D5" || "#000",
+                                    border: selectedMenu == 2 && "1px solid #CBD7E2" || "none"
+                                }}>
+                                Başkanın Mesajı
+                                {selectedMenu == 2 && <hr style={styles.bar}></hr>}
+                            </DropdownToggle>
+                        </Dropdown>
 
-                <Dropdown isOpen={dropdownOpen1} toggle={toggle1} onClick={()=>updateSelectedItem(3)}>
-                    <DropdownToggle style={{
-                            ...styles.dropdown,
-                            backgroundColor: selectedMenu == 3 && "#F8FAFD" || "#00000000",
-                            color: selectedMenu == 3 && "#7294D5" || "#000",
-                            border: selectedMenu == 3 && "1px solid #CBD7E2" || "none"
-                        }}
-                        caret>
-                        Mahalle Evleri
-                    </DropdownToggle>
-                    <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem>Some Action</DropdownItem>
-                    <DropdownItem text>Dropdown Item Text</DropdownItem>
-                    <DropdownItem disabled>Action (disabled)</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Foo Action</DropdownItem>
-                    <DropdownItem>Bar Action</DropdownItem>
-                    <DropdownItem>Quo Action</DropdownItem>
-                    </DropdownMenu>
-                </Dropdown>
+                        <Dropdown isOpen={dropdownOpen1} toggle={toggle1} onClick={()=>updateSelectedItem(3)}>
+                            <DropdownToggle style={{
+                                    ...styles.dropdown,
+                                    backgroundColor: selectedMenu == 3 && "#F8FAFD" || "#00000000",
+                                    color: selectedMenu == 3 && "#7294D5" || "#000",
+                                    border: selectedMenu == 3 && "1px solid #CBD7E2" || "none"
+                                }}
+                                caret>
+                                Mahalle Evleri
+                            </DropdownToggle>
+                            <DropdownMenu>
+                            <DropdownItem header>Header</DropdownItem>
+                            <DropdownItem>Some Action</DropdownItem>
+                            <DropdownItem text>Dropdown Item Text</DropdownItem>
+                            <DropdownItem disabled>Action (disabled)</DropdownItem>
+                            <DropdownItem divider />
+                            <DropdownItem>Foo Action</DropdownItem>
+                            <DropdownItem>Bar Action</DropdownItem>
+                            <DropdownItem>Quo Action</DropdownItem>
+                            </DropdownMenu>
+                        </Dropdown>
 
-                <Dropdown isOpen={dropdownOpen2} toggle={toggle2} onClick={()=>updateSelectedItem(4)}>
-                    <DropdownToggle style={{
-                            ...styles.dropdown,
-                            backgroundColor: selectedMenu == 4 && "#F8FAFD" || "#00000000",
-                            color: selectedMenu == 4 && "#7294D5" || "#000",
-                            border: selectedMenu == 4 && "1px solid #CBD7E2" || "none"
-                        }}
-                        caret>
-                        Başvuru Yap
-                    </DropdownToggle>
-                    <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem>Some Action</DropdownItem>
-                    <DropdownItem text>fnwje Item Text</DropdownItem>
-                    <DropdownItem disabled>Action (disabled)</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Ffjnwefw</DropdownItem>
-                    <DropdownItem>Bar Action</DropdownItem>
-                    <DropdownItem>Quo Action</DropdownItem>
-                    </DropdownMenu>
-                </Dropdown>
+                        <Dropdown isOpen={dropdownOpen2} toggle={toggle2} onClick={()=>updateSelectedItem(4)}>
+                            <DropdownToggle style={{
+                                    ...styles.dropdown,
+                                    backgroundColor: selectedMenu == 4 && "#F8FAFD" || "#00000000",
+                                    color: selectedMenu == 4 && "#7294D5" || "#000",
+                                    border: selectedMenu == 4 && "1px solid #CBD7E2" || "none"
+                                }}
+                                caret>
+                                Başvuru Yap
+                            </DropdownToggle>
+                            <DropdownMenu>
+                            <DropdownItem header>Header</DropdownItem>
+                            <DropdownItem>Some Action</DropdownItem>
+                            <DropdownItem text>fnwje Item Text</DropdownItem>
+                            <DropdownItem disabled>Action (disabled)</DropdownItem>
+                            <DropdownItem divider />
+                            <DropdownItem>Ffjnwefw</DropdownItem>
+                            <DropdownItem>Bar Action</DropdownItem>
+                            <DropdownItem>Quo Action</DropdownItem>
+                            </DropdownMenu>
+                        </Dropdown>
 
-                <Dropdown onClick={()=>updateSelectedItem(5)}>
-                    <DropdownToggle style={{
-                            ...styles.dropdown,
-                            backgroundColor: selectedMenu == 5 && "#F8FAFD" || "#00000000",
-                            color: selectedMenu == 5 && "#7294D5" || "#000",
-                            border: selectedMenu == 5 && "1px solid #CBD7E2" || "none"
-                        }}>
-                        S.S.S
-                        {selectedMenu == 5 && <hr style={styles.bar}></hr>}
-                    </DropdownToggle>
-                </Dropdown>
+                        <Dropdown onClick={()=>updateSelectedItem(5)}>
+                            <DropdownToggle style={{
+                                    ...styles.dropdown,
+                                    backgroundColor: selectedMenu == 5 && "#F8FAFD" || "#00000000",
+                                    color: selectedMenu == 5 && "#7294D5" || "#000",
+                                    border: selectedMenu == 5 && "1px solid #CBD7E2" || "none"
+                                }}>
+                                S.S.S
+                                {selectedMenu == 5 && <hr style={styles.bar}></hr>}
+                            </DropdownToggle>
+                        </Dropdown>
 
-                <Dropdown onClick={()=>updateSelectedItem(6)}>
-                    <DropdownToggle style={{
-                            ...styles.dropdown,
-                            backgroundColor: selectedMenu == 6 && "#F8FAFD" || "#00000000",
-                            color: selectedMenu == 6 && "#7294D5" || "#000",
-                            border: selectedMenu == 6 && "1px solid #CBD7E2" || "none"
-                        }}>
-                        İletişim
-                        {selectedMenu == 6 && <hr style={styles.bar}></hr>}
-                    </DropdownToggle>
-                </Dropdown>
-                <Button style={styles.button}>Giriş yap</Button>
-                <div style={{position:"relative"}}>
-                    <Input id="input-search" style={styles.input} placeholder="Arama..."/>
-                    <img style={{position:"absolute",top:10,right:10,width:16}} src={icon_search} alt="search icon" />
-                </div>
+                        <Dropdown onClick={()=>updateSelectedItem(6)}>
+                            <DropdownToggle style={{
+                                    ...styles.dropdown,
+                                    backgroundColor: selectedMenu == 6 && "#F8FAFD" || "#00000000",
+                                    color: selectedMenu == 6 && "#7294D5" || "#000",
+                                    border: selectedMenu == 6 && "1px solid #CBD7E2" || "none"
+                                }}>
+                                İletişim
+                                {selectedMenu == 6 && <hr style={styles.bar}></hr>}
+                            </DropdownToggle>
+                        </Dropdown>
+                        <Button style={styles.button}>Giriş yap</Button>
+                        <div style={{position:"relative"}}>
+                            <Input id="input-search" style={styles.input} placeholder="Arama..."/>
+                            <img style={{position:"absolute",top:10,right:10,width:16}} src={icon_search} alt="search icon" />
+                        </div>
 
-            </div>
-            {/* </Container> */}
-        </Navbar>
+                    </div>
+                    {/* </Container> */}
+                </Navbar>
+            }
+            {/* hamburger menu for mobile */}
+            {
+                isMobile && <Navbar color="faded" light>
+                <NavbarBrand href="/" className="mr-auto">
+                    <div style={styles.main}>
+                        <img style={{...styles.svgItems}} src={mah_ev_logo} alt="mah ev logo" />
+                        <div style={{display:"flex",flexDirection: "column",fontFamily:"Poppins",fontSize: 12,fontWeight: 600,color:"#CE1432"}}>
+                            <span>MAHALLE EVİ</span>
+                            <span style={{width:150,whiteSpace: "pre-wrap",fontFamily:"Poppins",fontWeight: 600,color:"#1D428A"}}>İBB SOSYAL HİZMETLER MÜDÜRLÜĞÜ</span>
+                        </div>
+                    </div>
+                </NavbarBrand>
+                <NavbarToggler onClick={toggleNavbar} className="hamburger-button" />
+                <Collapse isOpen={!collapsed} navbar>
+                    <Nav navbar style={{width:"100vw", height: "100vh", zIndex: 899, position: "fixed", top: 80, left: 0, backgroundColor: "#fff"}}>
+                        <NavItem>
+                        <NavLink href="/components/">Components</NavLink>
+                        </NavItem>
+                        <NavItem>
+                        <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                        </NavItem>
+                    </Nav>
+                </Collapse>
+              </Navbar>
+            }
+        </>
     )
   }
 

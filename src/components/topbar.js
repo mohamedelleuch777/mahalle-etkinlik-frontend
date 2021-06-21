@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import useWindowSize from '../hooks/resize'
 
 // reactstrap components
 import {
@@ -20,6 +21,8 @@ import {
   import youtube from '../assets/img/youtube.svg';
 
   const TopBar = (props) => {
+    const [width, height] = useWindowSize();
+    const [isMobile, setismobile] = useState(false);
 
     const styles = {
         main: {
@@ -43,15 +46,28 @@ import {
         }
     }
 
+    useEffect( ()=>{
+        console.log("w",width,"h",height);
+        if(width<=992) {
+            setismobile(true);
+        } else {
+            setismobile(false);
+        }
+    },[width,height])
+
     return(
-        <div style={styles.main}>
-            <div style={styles.imgContainer}>
-                <img style={styles.svgItems} src={youtube} alt="beyazmasa logo" />
-                <img style={styles.svgItems} src={youtube} alt="beyazmasa logo" />
-                <img style={styles.svgItems} src={youtube} alt="beyazmasa logo" />
-                <img src={beyazmasa} alt="beyazmasa logo" />
+        <>
+         {
+            isMobile || <div style={styles.main}>
+                <div style={styles.imgContainer}>
+                    <img style={styles.svgItems} src={youtube} alt="beyazmasa logo" />
+                    <img style={styles.svgItems} src={youtube} alt="beyazmasa logo" />
+                    <img style={styles.svgItems} src={youtube} alt="beyazmasa logo" />
+                    <img src={beyazmasa} alt="beyazmasa logo" />
+                </div>
             </div>
-        </div>
+         }
+        </>
     )
   }
 
