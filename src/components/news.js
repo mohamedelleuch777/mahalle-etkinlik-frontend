@@ -25,7 +25,8 @@ const MahalleBasvuru = (props) => {
 
     const styles = {
         container: {
-            margin: "60px auto",
+            // margin: "60px auto",
+            margin: 0,
             padding: 20,
             boxShadow: "#00000029 0 0 15px 0px",
             borderRadius: 12
