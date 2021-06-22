@@ -18,6 +18,11 @@ import {
   } from "reactstrap";
 // import Carousel from 'react-bootstrap/Carousel'
 import News from './news'
+import BasvuruItem from './basvuru_item'
+
+import img1 from '../assets/img/girl-with-big-smile-classroom@2x.png'
+import img2 from '../assets/img/Group 3106@2x.png'
+import img3 from '../assets/img/Mask Group 610@2x.png'
 
 
 const MahalleBasvuru = (props) => {
@@ -76,22 +81,25 @@ const MahalleBasvuru = (props) => {
                         <News />
                     </Col>}
                     <Col style={styles.columns} md={isMobile?4:3}>
-                        <Container>
-                            <Row style={styles.number}>8</Row>
-                            <Row style={styles.description}>Mahalle Evi</Row>
-                        </Container>
+                        <BasvuruItem 
+                            img={img1} 
+                            title="Çocuk Kayıt (5-18 yaş)" 
+                            paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                        />
                     </Col>
                     <Col style={styles.columns} md={isMobile?4:3}>
-                        <Container>
-                            <Row style={styles.number}>150</Row>
-                            <Row style={styles.description}>Eğitim Gönüllüsü</Row>
-                        </Container>
+                        <BasvuruItem 
+                            img={img2} 
+                            title="Yetişkin Kayıt (18 yaş ve üzeri)" 
+                            paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                        />
                     </Col>
                     <Col style={styles.columns} md={isMobile?4:3}>
-                        <Container>
-                            <Row style={styles.number}>1820</Row>
-                            <Row style={styles.description}>Mahalle Evi Sakini</Row>
-                        </Container>
+                        <BasvuruItem
+                            img={img3} 
+                            title="Mahalle Evi Gönüllüsü Ol" 
+                            paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                        />
                     </Col>
                 </Row>
                 <Row style={styles.buttonParentRow}>
