@@ -23,6 +23,7 @@ import BasvuruItem from './basvuru_item'
 import img1 from '../assets/img/girl-with-big-smile-classroom@2x.png'
 import img2 from '../assets/img/Group 3106@2x.png'
 import img3 from '../assets/img/Mask Group 610@2x.png'
+import img_HesKodu from '../assets/img/Mask Group 611@2x.png'
 
 
 const MahalleBasvuru = (props) => {
@@ -60,6 +61,34 @@ const MahalleBasvuru = (props) => {
         buttonParentRow: {
             justifyContent: "center",
             marginTop: 60
+        },
+        bgDiv: {
+            backgroundColor: "#F5F8FA",
+            height: 180,
+            width: "100%",
+            border: "none",
+            bottom: 0,
+            position: "absolute",
+            zIndex: -1,
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column"
+        },
+        imageHesKodu: {
+            maxWidth: 500,
+            width: "30%"
+        },
+        titleHesKodu: {
+            color: "#3A9544",
+            fontSize: 35,
+            fontFamily: 'Poppins',
+            fontWeight: 700
+        },
+        textHesKodu: {
+            color: "#606060",
+            fontSize: 18,
+            fontFamily: 'Poppins',
+            fontWeight: 300
         }
     }
 
@@ -102,13 +131,17 @@ const MahalleBasvuru = (props) => {
                         />
                     </Col>
                 </Row>
-                <Row style={styles.buttonParentRow}>
-                    <Button style={styles.button}>
-                        Mahalleli veya Gönüllü olmak için tıklayın
-                    </Button>
-                </Row>
             </Container>
-            <hr style={{borderBottom: "5px solid #CBD7E2"}} />
+            <div style={{position: "relative"}}>
+                <img style={styles.imageHesKodu} src={img_HesKodu} />
+                <div style={styles.bgDiv} >
+                    <div style={{marginLeft:"33%"}}>
+                        <h2 style={styles.titleHesKodu}>HES Kodu Nasıl Alınır ?</h2>
+                        <p style={styles.textHesKodu}>Mahalle Evlerinden yararlanabilmeniz için yasal olarak HES Kodu almanız zorunluluğu vardır. Buraya tıklayarak HES Kodunuzu nasıl alabileceğinizi öğrenebilirsiniz.</p>
+                    </div>
+                </div>
+            </div>
+            <hr style={{borderBottom: "5px solid #CBD7E2", marginTop: 0}} />
         </>
     )
 }
