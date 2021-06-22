@@ -88,7 +88,8 @@ const MahalleBasvuru = (props) => {
             color: "#606060",
             fontSize: 18,
             fontFamily: 'Poppins',
-            fontWeight: 300
+            fontWeight: 300,
+            maxWidth: 820
         }
     }
 
