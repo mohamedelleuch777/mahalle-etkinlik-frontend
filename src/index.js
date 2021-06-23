@@ -18,7 +18,7 @@ ReactDOM.render(
             render={(props) => <MainPage {...props} />}
           />
         </Switch>
-      </BrowserRouter>,
+      </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

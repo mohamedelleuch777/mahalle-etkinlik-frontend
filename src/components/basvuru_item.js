@@ -20,7 +20,7 @@ import useWindowSize from '../hooks/resize'
 
 
 
-const MahalleBasvuru = (props) => {
+const BasvuruItem = (props) => {
     const [isMobile, setismobile] = useState(false);
     const [width, height] = useWindowSize();
 
@@ -113,5 +113,5 @@ const MahalleBasvuru = (props) => {
     )
 }
 
-export default MahalleBasvuru;
+export default BasvuruItem;
 

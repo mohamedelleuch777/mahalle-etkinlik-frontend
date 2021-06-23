@@ -46,7 +46,8 @@ const MahalleCounter = (props) => {
             borderRaidus: 6,
             fontSize: 24,
             fontFamily: 'Poppins',
-            fontWeight: 700
+            fontWeight: 700,
+            border: "none"
         },
         buttonParentRow: {
             justifyContent: "center",
