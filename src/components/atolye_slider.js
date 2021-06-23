@@ -16,17 +16,17 @@ import {
     Table,
     Container,
   } from "reactstrap";
-import News from './news'
-import IletisimItem from './iletisim_item'
+import AtolyeItem from './atolye_item'
 
 // import Carousel from 'react-bootstrap/Carousel'
 // import TouchCarousel from 'react-touch-carousel'
 
 import ItemsCarousel from 'react-items-carousel';
 
-import img1 from '../assets/img/Mask Group 612@2x.png'
-import img2 from '../assets/img/Mask Group 613@2x.png'
-import img3 from '../assets/img/Mask Group 614@2x.png'
+import img1 from '../assets/img/1@2x.png'
+import img2 from '../assets/img/2@2x.png'
+import img3 from '../assets/img/3@2x.png'
+import img4 from '../assets/img/4@2x.png'
 import arrowRight from '../assets/img/Group 6292.svg'
 import arrowLeft from '../assets/img/Group 6293.svg'
 
@@ -45,24 +45,27 @@ const IletisimSlider = (props) => {
         }
     },[width,height])
 
+
     const data = [
         {
             img: img1,
-            title: "Cumhuriyet Mahalle Evi" ,
-            paragraph: "Beylikdüzü İlçesi",
-            numbers: [4,2,1]
+            title: "Kültür Sanat",
+            category: "Etkinlikleri"
         },
         {
             img: img2,
-            title: "Zafer Mahalle Evi" ,
-            paragraph: "Beylikdüzü İlçesi",
-            numbers: [1,5,3]
+            title: "Bilim ve Teknoloji" ,
+            category: "Etkinlikleri"
         },
         {
             img: img3,
-            title: "Pazariçi Mahalle Evi" ,
-            paragraph: "Gaziosmanpaşa İlçesi",
-            numbers: [9,5,8]
+            title: "Müzik ve Ritim" ,
+            category: "Atölyesi"
+        },
+        {
+            img: img4,
+            title: "Dans ve Spor" ,
+            category: "Etkinlikleri"
         }
     ]
 
@@ -83,7 +86,7 @@ const IletisimSlider = (props) => {
                             chevronWidth={60}
                             disableSwipe={false}
                             alwaysShowChevrons={false}
-                            numberOfCards={3}
+                            numberOfCards={4}
                             slidesToScroll={1}
                             outsideChevron={true}
                             showSlither={false}
@@ -103,26 +106,25 @@ const IletisimSlider = (props) => {
                         >
                             {data.map( (item, index) => {
                                     return (
-                                                <IletisimItem
+                                                <AtolyeItem
                                                     key={index}
                                                     img={item.img} 
                                                     title={item.title}
-                                                    paragraph={item.paragraph}
-                                                    numbers={item.numbers}
+                                                    category={item.category}
                                                 />
                                             )
                                 })}
                         </ItemsCarousel>
                         </div>
-                       
                 </Row>
             </Container>
-            <hr style={{borderBottom: "5px solid #CBD7E2", marginTop: 0}} />
+            {/* <hr style={{borderBottom: "5px solid #CBD7E2", marginTop: 0}} /> */}
         </>
     )
 }
 
 export default IletisimSlider;
+
 
 
 
