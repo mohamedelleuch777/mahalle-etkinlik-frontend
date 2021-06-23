@@ -141,10 +141,10 @@ code {
   color: #FFFFFF !important;
   border-radius: 5px;
 }
-/* div.iletisim-slider-container > div > div {
 
-} */
-
+div.iletisim-slider-container > div > div {
+  padding: 10px
+}
 
 @media screen and (min-width: 1350px)  {
   .container {

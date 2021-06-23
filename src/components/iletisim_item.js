@@ -85,7 +85,7 @@ const styles = {
         // padding: 20,
         // boxShadow: "#00000029 0 0 15px 0px",
         // borderRadius: 12
-        margin: 10
+        margin: "10px 0"
     },
     row: {
         display: "block",
