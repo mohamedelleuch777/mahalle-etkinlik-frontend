@@ -41,77 +41,6 @@ import {
   
     const toggleNavbar = () => setCollapsed(!collapsed);
 
-    const styles = {
-        main: {
-            // height: 120,
-            // width: "100%",
-            backgroundColor: "#FFFFFF",
-            paddingLeft: 0,
-            paddingRight: 0,
-            display: "flex",
-            alignItems: "center"
-        },
-        imgContainer: {
-            height: 33,
-            display: "flex",
-            justifyContent: "space-between",
-            width: 300,
-            marginLeft: "auto",
-            marginRight: "10%"
-        },
-        divContainer: {
-            margin: "0px 2%",
-            width: "100%",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center"
-        },
-        svgItems: {
-            width: 74,
-            height: 74
-        },
-        dropdown: {
-            // backgroundColor: "#00000000",
-            // border: "1px solid #CBD7E2",
-            // color: "#7294D5",
-            height: 35,
-            paddingLeft: 10,
-            paddingRight: 10,
-            // padding: 0,
-            paddingTop: 6.5,
-            paddingBottom: 6.5,
-            outline: "none",
-            boxShadow: "none",
-            // minWidth: 140,
-            fontFamily: "poppins",
-            fontSize: 14,
-            whiteSpace: "noWrap"
-        },
-        bar: {
-            border: "3px solid #7294D5",
-            backgroundColor: "#7294D5",
-            borderRadius: 3,
-            // minWidth: 60,
-            // maxWidth: 60
-            width: "45%"
-        },
-        button: {
-            fontFamily: "poppins",
-            fontSize: 14,
-            width: 120,
-            height: 35,
-            color: "#fff",
-            backgroundColor: "#1D428A",
-            margin: "0 10px"
-        },
-        input: {
-            maxWidth: 256,
-            border: "1px solid #D0DBE4",
-            borderRadius: 0,
-            // margin: "0 10px"
-            paddingRight: 30
-        }
-    }
 
     const toggle1 = () => setDropdownOpen1(prevState => !prevState);
     const toggle2 = () => setDropdownOpen2(prevState => !prevState);
@@ -139,8 +68,11 @@ import {
                     <div style= {styles.divContainer}>
                     {/* <Container> */}
                         <div style={styles.main}>
-                            <img style={styles.svgItems} src={ibb_logo} alt="ibb logo" />
-                            <img style={{...styles.svgItems,marginLeft:36}} src={mah_ev_logo} alt="mah ev logo" />
+                            <img style={{...styles.svgItems}} src={mah_ev_logo} alt="mah ev logo" />
+                            {width>=1100 && <div style={{display:"flex",flexDirection: "column",fontFamily:"Poppins",fontSize: 12,fontWeight: 600,color:"#CE1432"}}>
+                                <span>MAHALLE EVİ</span>
+                                <span style={{width:150,whiteSpace: "pre-wrap",fontFamily:"Poppins",fontWeight: 600,color:"#1D428A"}}>İBB SOSYAL HİZMETLER MÜDÜRLÜĞÜ</span>
+                            </div>}
                         </div>
                         <Dropdown onClick={()=>updateSelectedItem(1)}>
                             <DropdownToggle style={{
@@ -177,14 +109,14 @@ import {
                                 Mahalle Evleri
                             </DropdownToggle>
                             <DropdownMenu>
-                            <DropdownItem header>Header</DropdownItem>
-                            <DropdownItem>Some Action</DropdownItem>
-                            <DropdownItem text>Dropdown Item Text</DropdownItem>
-                            <DropdownItem disabled>Action (disabled)</DropdownItem>
-                            <DropdownItem divider />
-                            <DropdownItem>Foo Action</DropdownItem>
-                            <DropdownItem>Bar Action</DropdownItem>
-                            <DropdownItem>Quo Action</DropdownItem>
+                                <DropdownItem header>Header</DropdownItem>
+                                <DropdownItem>Some Action</DropdownItem>
+                                <DropdownItem text>Dropdown Item Text</DropdownItem>
+                                <DropdownItem disabled>Action (disabled)</DropdownItem>
+                                <DropdownItem divider />
+                                <DropdownItem>Foo Action</DropdownItem>
+                                <DropdownItem>Bar Action</DropdownItem>
+                                <DropdownItem>Quo Action</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
 
@@ -199,14 +131,8 @@ import {
                                 Başvuru Yap
                             </DropdownToggle>
                             <DropdownMenu>
-                            <DropdownItem header>Header</DropdownItem>
-                            <DropdownItem>Some Action</DropdownItem>
-                            <DropdownItem text>fnwje Item Text</DropdownItem>
-                            <DropdownItem disabled>Action (disabled)</DropdownItem>
-                            <DropdownItem divider />
-                            <DropdownItem>Ffjnwefw</DropdownItem>
-                            <DropdownItem>Bar Action</DropdownItem>
-                            <DropdownItem>Quo Action</DropdownItem>
+                                <DropdownItem>Mahalleli Ol</DropdownItem>
+                                <DropdownItem>Gönüllü Ol</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
 
@@ -273,3 +199,77 @@ import {
   }
 
   export default Menu;
+
+
+
+  const styles = {
+    main: {
+        // height: 120,
+        // width: "100%",
+        backgroundColor: "#FFFFFF",
+        paddingLeft: 0,
+        paddingRight: 0,
+        display: "flex",
+        alignItems: "center"
+    },
+    imgContainer: {
+        height: 33,
+        display: "flex",
+        justifyContent: "space-between",
+        width: 300,
+        marginLeft: "auto",
+        marginRight: "10%"
+    },
+    divContainer: {
+        margin: "0px 2%",
+        width: "100%",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center"
+    },
+    svgItems: {
+        width: 74,
+        height: 74
+    },
+    dropdown: {
+        // backgroundColor: "#00000000",
+        // border: "1px solid #CBD7E2",
+        // color: "#7294D5",
+        height: 35,
+        paddingLeft: 10,
+        paddingRight: 10,
+        // padding: 0,
+        paddingTop: 6.5,
+        paddingBottom: 6.5,
+        outline: "none",
+        boxShadow: "none",
+        // minWidth: 140,
+        fontFamily: "poppins",
+        fontSize: 14,
+        whiteSpace: "noWrap"
+    },
+    bar: {
+        border: "3px solid #7294D5",
+        backgroundColor: "#7294D5",
+        borderRadius: 3,
+        // minWidth: 60,
+        // maxWidth: 60
+        width: "45%"
+    },
+    button: {
+        fontFamily: "poppins",
+        fontSize: 14,
+        width: 120,
+        height: 35,
+        color: "#fff",
+        backgroundColor: "#1D428A",
+        margin: "0 10px"
+    },
+    input: {
+        maxWidth: 256,
+        border: "1px solid #D0DBE4",
+        borderRadius: 0,
+        // margin: "0 10px"
+        paddingRight: 30
+    }
+}

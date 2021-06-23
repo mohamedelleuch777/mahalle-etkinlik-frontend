@@ -125,6 +125,22 @@ code {
   opacity: 1;
 }
 
+.dropdown-menu.show {
+  padding: 0;
+  margin-top: 1px;
+  border: #CBD7E2 solid 1px;
+  border-radius: 5px;
+  color: #FFFFFF !important;
+  font-family: "Poppins" !important;
+  font-size: 12px !important;
+  font-weight: 300 !important;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: #1D428A !important;
+  color: #FFFFFF !important;
+  border-radius: 5px;
+}
 /* div.iletisim-slider-container > div > div {
 
 } */

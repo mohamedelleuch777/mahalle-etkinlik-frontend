@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import './index.css';
 import MainPage from './pages/main_page'
+import Catalog from './pages/catalog'
 import reportWebVitals from './reportWebVitals';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "./assets/css/bootstrap.min.css";
@@ -14,8 +15,12 @@ ReactDOM.render(
         <Switch>
           {/* <Route path="/index" render={(props) => <Main {...props} />} /> */}
           <Route
-            path="/*"
+            path="/welcome"
             render={(props) => <MainPage {...props} />}
+          />
+          <Route
+            path="/*"
+            render={(props) => <Catalog {...props} />}
           />
         </Switch>
       </BrowserRouter>
