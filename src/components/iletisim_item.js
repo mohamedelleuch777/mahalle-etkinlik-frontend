@@ -53,20 +53,20 @@ const IletisimItem = (props) => {
                             <div style={{display: "flex",height: 74,alignItems: "center",marginTop: 25,marginLeft:-25,marginRight:-25}}>
                                 {/* div1 */}
                                 <div style={{width:"30%",textAlign:"center",display: "flex",flexDirection: "column",color:"#475677"}}>
-                                    <span style={{fontFamiliy:"Poppins",fontSize:36,fontWeight:600}}>{props.numbers[0]}</span>
-                                    <span style={{fontFamiliy:"Poppins",fontSize:18,fontWeight:200}}>Atölye</span>
+                                    <span style={{fontFamily:"Poppins",fontSize:36,fontWeight:600}}>{props.numbers[0]}</span>
+                                    <span style={{fontFamily:"Poppins",fontSize:18,fontWeight:200}}>Atölye</span>
                                 </div>
                                 {/* div2 */}
                                 <div style={{width:"40%",textAlign:"center",display: "flex",flexDirection: "column",color:"#475677",
                                     borderRight: "#475677 solid 1px",borderLeft: "#475677 solid 1px"
                                 }}>
-                                    <span style={{fontFamiliy:"Poppins",fontSize:36,fontWeight:600}}>{props.numbers[1]}</span>
-                                    <span style={{fontFamiliy:"Poppins",fontSize:18,fontWeight:200}}>Gönüllü</span>
+                                    <span style={{fontFamily:"Poppins",fontSize:36,fontWeight:600}}>{props.numbers[1]}</span>
+                                    <span style={{fontFamily:"Poppins",fontSize:18,fontWeight:200}}>Gönüllü</span>
                                 </div>
                                 {/* div3 */}
                                 <div style={{width:"30%",textAlign:"center",display: "flex",flexDirection: "column",color:"#475677"}}>
-                                    <span style={{fontFamiliy:"Poppins",fontSize:36,fontWeight:600}}>{props.numbers[2]}</span>
-                                    <span style={{fontFamiliy:"Poppins",fontSize:18,fontWeight:200}}>Sorumlu</span>
+                                    <span style={{fontFamily:"Poppins",fontSize:36,fontWeight:600}}>{props.numbers[2]}</span>
+                                    <span style={{fontFamily:"Poppins",fontSize:18,fontWeight:200}}>Sorumlu</span>
                                 </div>
                             </div>
                         </div>
