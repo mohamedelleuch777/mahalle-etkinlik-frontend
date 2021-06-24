@@ -59,6 +59,21 @@ import {
     },[width,height])
 
 
+    useEffect(()=>{
+        switch(window.location.pathname)
+        {
+            case "/welcome": {
+                setselectedMenu(1)
+                break;
+            }
+            case "/president": {
+                setselectedMenu(2)
+                break;
+            }
+        }
+    },[])
+
+
     return(
         <>
             {/* normal menu for desktop */}
@@ -75,24 +90,34 @@ import {
                             </div>}
                         </div>
                         <Dropdown onClick={()=>updateSelectedItem(1)}>
-                            <DropdownToggle style={{
+                            <DropdownToggle 
+                                style={{
                                     ...styles.dropdown,
                                     backgroundColor: selectedMenu == 1 && "#F8FAFD" || "#00000000",
                                     color: selectedMenu == 1 && "#7294D5" || "#000",
                                     border: selectedMenu == 1 && "1px solid #CBD7E2" || "none"
-                                }}>
+                                }}
+                                onClick={ () => {
+                                    window.location.href = "/welcome"
+                                }}
+                            >
                                 Ana Sayfa
                                 {selectedMenu == 1 && <hr style={styles.bar}></hr>}
                             </DropdownToggle>
                         </Dropdown>
 
                         <Dropdown onClick={()=>updateSelectedItem(2)}>
-                            <DropdownToggle style={{
+                            <DropdownToggle 
+                                style={{
                                     ...styles.dropdown,
                                     backgroundColor: selectedMenu == 2 && "#F8FAFD" || "#00000000",
                                     color: selectedMenu == 2 && "#7294D5" || "#000",
                                     border: selectedMenu == 2 && "1px solid #CBD7E2" || "none"
-                                }}>
+                                }}
+                                onClick={ () => {
+                                    window.location.href = "/president"
+                                }}
+                            >
                                 Başkanın Mesajı
                                 {selectedMenu == 2 && <hr style={styles.bar}></hr>}
                             </DropdownToggle>
