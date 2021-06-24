@@ -14,6 +14,7 @@ export default () => {
         }}>
             <ul>
                 <li><a href="/welcome">Main page</a></li>
+                <li><a href="/president">President page</a></li>
             </ul>
         </div>
     )

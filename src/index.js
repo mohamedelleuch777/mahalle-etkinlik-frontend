@@ -2,9 +2,10 @@ import React from 'react';
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import './index.css';
-import MainPage from './pages/main_page'
 import Catalog from './pages/catalog'
 import reportWebVitals from './reportWebVitals';
+import MainPage from './pages/main_page'
+import PresidentPage from './pages/president_page'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "./assets/css/bootstrap.min.css";
 
@@ -17,6 +18,10 @@ ReactDOM.render(
           <Route
             path="/welcome"
             render={(props) => <MainPage {...props} />}
+          />
+          <Route
+            path="/president"
+            render={(props) => <PresidentPage {...props} />}
           />
           <Route
             path="/*"
