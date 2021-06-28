@@ -25,7 +25,9 @@ const PresidentPage = (props) => {
             fontFamily: 'Poppins',
             textAlign: "left",
             margin: "60px 0",
-            fontWeight: 600
+            fontWeight: 600,
+            marginLeft: 0,
+            marginRight: "auto"
         },
         paragraph: {
             fontSize: width<1568?(width>=1308?20:17):22,

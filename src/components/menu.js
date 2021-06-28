@@ -70,6 +70,10 @@ import {
                 setselectedMenu(2)
                 break;
             }
+            case "/mahol": {
+                setselectedMenu(4)
+                break;
+            }
         }
     },[])
 
@@ -156,7 +160,11 @@ import {
                                 Başvuru Yap
                             </DropdownToggle>
                             <DropdownMenu>
-                                <DropdownItem>Mahalleli Ol</DropdownItem>
+                                <DropdownItem
+                                    onClick={ () => {
+                                        window.location.href = "/mahol"
+                                    }}
+                                >Mahalleli Ol</DropdownItem>
                                 <DropdownItem>Gönüllü Ol</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>

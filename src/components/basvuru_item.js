@@ -24,68 +24,6 @@ const BasvuruItem = (props) => {
     const [isMobile, setismobile] = useState(false);
     const [width, height] = useWindowSize();
 
-    const styles = {
-        container: {
-            // margin: "60px auto",
-            // padding: 20,
-            // boxShadow: "#00000029 0 0 15px 0px",
-            // borderRadius: 12
-        },
-        row: {
-            display: "block",
-            textAlign: "left",
-            position: "relative",
-            height: "100%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "start",
-            boxShadow: "#00000029 0 0 15px 0px",
-            padding: 20
-        },
-        image: {
-            height: "auto",
-            margin: -20,
-            width: "calc(100% + 40px)",
-        },
-        link: {
-            color: "#0088CC",
-            fontFamily: "Poppins",
-            fontWeight: 600,
-            fontSize: 16,
-            margin: "20px 0",
-            transform: "translateY(11px)"
-        },
-        title: {
-            color: "#000",
-            fontFamily: "Poppins",
-            fontWeight: 700,
-            fontSize: 18,
-            textAlign: "left",
-            margin: 0,
-            minHeight: 45
-        },
-        paragraph: {
-            color: "#606060",
-            textAlign: "left",
-            fontFamily: "Poppins",
-            fontSize: 14,
-            fontWeight: 300,
-            // margin: "20px 0"
-            maring: "5px 0 20px 0px"
-        },
-        button: {
-            backgroundColor: "#0088CC",
-            borderRadius: 8,
-            color: "#fff",
-            margin: "20px 0",
-            maxWidth: 180,
-            margin: "0 auto",
-            width: "50%",
-            border: "none",
-            fontFamily: "Poppins",
-            fontWeight: 600
-        }
-    }
 
     useEffect( ()=>{
         // console.log("w",width,"h",height);
@@ -115,3 +53,67 @@ const BasvuruItem = (props) => {
 
 export default BasvuruItem;
 
+
+
+const styles = {
+    container: {
+        // margin: "60px auto",
+        // padding: 20,
+        // boxShadow: "#00000029 0 0 15px 0px",
+        // borderRadius: 12
+    },
+    row: {
+        display: "block",
+        textAlign: "left",
+        position: "relative",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "start",
+        boxShadow: "#00000029 0 0 15px 0px",
+        padding: 20
+    },
+    image: {
+        height: "auto",
+        margin: -20,
+        width: "calc(100% + 40px)",
+    },
+    link: {
+        color: "#0088CC",
+        fontFamily: "Poppins",
+        fontWeight: 600,
+        fontSize: 16,
+        margin: "20px 0",
+        transform: "translateY(11px)"
+    },
+    title: {
+        color: "#000",
+        fontFamily: "Poppins",
+        fontWeight: 700,
+        fontSize: 18,
+        textAlign: "left",
+        margin: 0,
+        minHeight: 45
+    },
+    paragraph: {
+        color: "#606060",
+        textAlign: "left",
+        fontFamily: "Poppins",
+        fontSize: 14,
+        fontWeight: 300,
+        // margin: "20px 0"
+        maring: "5px 0 20px 0px"
+    },
+    button: {
+        backgroundColor: "#0088CC",
+        borderRadius: 8,
+        color: "#fff",
+        margin: "20px 0",
+        maxWidth: 180,
+        margin: "0 auto",
+        width: "50%",
+        border: "none",
+        fontFamily: "Poppins",
+        fontWeight: 600
+    }
+}
