@@ -146,6 +146,25 @@ div.iletisim-slider-container > div > div {
   padding: 10px
 }
 
+ul.list-blue-bullet {
+  list-style: none;
+}
+
+ul.list-blue-bullet > li {
+  margin: 20px auto;
+}
+
+ul.list-blue-bullet > li::before {
+  content: "\2022";
+  color: #0088CC;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 32px;
+  width: 12px;
+  margin-left: -10px;
+  transform: translate(-20px,3px);
+}
+
 @media screen and (min-width: 1350px)  {
   .container {
     max-width: 1350px !important;

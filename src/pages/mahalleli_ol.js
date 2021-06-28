@@ -25,6 +25,7 @@ import Footer from '../components/footer'
 import img_bg_img from '../assets/img/Group 33.svg'
 import img_girl from '../assets/img/Image@2x.png'
 import img_youth from '../assets/img/Image@2x 2.png'
+import img_clip from '../assets/img/Clip@2x.png'
 
 const MahalleliOl = (props) => {
     const [isMobile, setismobile] = useState(false);
@@ -107,8 +108,54 @@ return(
                 </Container>
             </Container>
             <hr style={{borderBottom: "5px solid #CBD7E2", marginTop: 0}} />
-            <BlueTitle title="Gönüllü Ol"/>
             {/* ---------------------------------------------------- */}
+            <BlueTitle title="Gönüllü Ol"/>
+            <Container style={{backgroundColor:"#fff",position:"relative"}}>
+                <img src={img_bg_img} style={{...styles.imgBg,transform:"translate(+40%, -40%)",right:0}}/>
+                <Row style={{marginBottom:120,position:"relative",boxShadow:"0 0 59px 0 #60e9ff45",padding:40}}>
+                    <Col md="6" style={{position:"relative"}}>
+                        <img src={img_clip} style={styles.img}/>
+                    </Col>
+                    <Col md="6">
+                        <Container style={{display:"flex",flexDirection:"column",position:"relative",height:"100%",justifyContent:"space-between",paddingLeft:"5%",backgroundColor:"#fff",padding:"45px 40px"}}>
+                            {/* sub item 1 */}
+                            <Row>
+                                <span style={styles.title}>Gönüllü Olmak İçin</span>
+                            </Row>
+                            <Row style={styles.paragraph}>
+                                <ul className="list-blue-bullet">
+                                    <li>
+                                        18 yaşını doldurmuş olmak
+                                    </li>
+                                    <li>
+                                        Gönüllülük sürecinin düzenli ve sürekli bir seyir izlemesi gerektiğinin bilincinde olmak
+                                    </li>
+                                    <li>
+                                        İnsan Hakları ve Çocuk Hakları’nı benimsemek
+                                    </li>
+                                </ul>
+                            </Row>
+                            {/* sub item 2 */}
+                            <Row>
+                                <span style={styles.title}>Gönüllülük Süreci</span>
+                            </Row>
+                            <Row style={styles.paragraph}>
+                                <ul className="list-blue-bullet">
+                                    <li>
+                                        Mahalle Evi’nde gönüllü olmak için başvuran adaylar Gönüllü Tanışma Toplantısı’na davet edilir.
+                                    </li>
+                                    <li>
+                                        Tanışma toplantısına katılan, belirlediği gün ve saatlerde düzenli katılımı kabul eden gönüllüler tercih ettikleri gönüllülük türünde, tercih ettikleri gün ve saatlerde destek vermeye başlar.
+                                    </li>
+                                </ul>
+                            </Row>
+                        </Container>
+                    </Col>
+                </Row>
+                <img src={img_bg_img} style={{...styles.imgBg,transform:"translate(-40%, -190%)",left:0}}/>
+            </Container>
+            {/* ---------------------------------------------------- */}
+            
             <Footer/>
         </>
     )
@@ -179,7 +226,7 @@ const styles = {
     paragraph: {
         color: "#333333",
         fontFamily: "Poppins",
-        fontWeight: 300,
+        fontWeight: 400,
         fontSize: 20,
         textAlign: "left",
         display:"flex",
