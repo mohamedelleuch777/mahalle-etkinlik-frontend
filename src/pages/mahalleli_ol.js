@@ -27,6 +27,11 @@ import img_girl from '../assets/img/Image@2x.png'
 import img_youth from '../assets/img/Image@2x 2.png'
 import img_clip from '../assets/img/Clip@2x.png'
 
+import img1 from '../assets/img/Mask Group 4@2x.png'
+import img2 from '../assets/img/Mask Group 4@2x 2.png'
+import img3 from '../assets/img/Mask Group 4@2x 3.png'
+import img4 from '../assets/img/Mask Group 621@2x.png'
+
 const MahalleliOl = (props) => {
     const [isMobile, setismobile] = useState(false);
     const [width, height] = useWindowSize();
@@ -155,7 +160,70 @@ return(
                 <img src={img_bg_img} style={{...styles.imgBg,transform:"translate(-40%, -190%)",left:0}}/>
             </Container>
             {/* ---------------------------------------------------- */}
-            
+            <hr style={{borderBottom: "5px solid #CBD7E2", marginTop: 0}} />
+            {/* ---------------------------------------------------- */}
+            <BlueTitle title="Gönüllülük Türleri"/>
+            <Container>
+                <Row>
+                    <Col style={styles.columns} md={isMobile?4:3}>
+                        <GonullulukTurleriItem 
+                            img={img1} 
+                            title="Ofis Gönüllüsü" 
+                            paragraph="Ofis gönüllüleri, Mahalle Evi'nde iletişim, koordinasyon, raporlama, proje yürütme konularında destek verir."
+                        />
+                    </Col>
+                    <Col style={styles.columns} md={isMobile?4:3}>
+                        <GonullulukTurleriItem 
+                            img={img2} 
+                            title="Oyun Gönüllüsü" 
+                            paragraph="Oyun odası gönüllüleri, Mahalle Evi'ne kayıtlı olan çocuklar ile keyifli vakit geçirmek için oyun odasında onlara eşlik eder ve çeşitli aktiviteler gerçekleştirir."
+                        />
+                    </Col>
+                    <Col style={styles.columns} md={isMobile?4:3}>
+                        <GonullulukTurleriItem 
+                            img={img3} 
+                            title="Eğitim Destek Gönüllüsü"
+                            paragraph="Eğitim destek gönüllüleri, Mahalle Evi'nde çocuklara ve gençlere akademik destek verir."
+                        />
+                    </Col>
+                    <Col style={styles.columns} md={isMobile?4:3}>
+                        <GonullulukTurleriItem
+                            img={img4} 
+                            title="Etkinlik Gönüllüsü"
+                            paragraph="Etkinlik gönüllüleri, kişisel veya mesleki bilgi ve becerileri doğrultusunda Mahalle Evi'nde mahalleliye yönelik eğitim veya atölye desteği verir."
+                        />
+                    </Col>
+                </Row>
+            </Container>
+            <p style={{
+                    textAlign: "center",
+                    fontSize: 26,
+                    fontFamily: 'Poppins',
+                    color: "#7D8597",
+                    maxWidth: 1170,
+                    margin: "auto",
+                    marginTop: 120,
+                    marginBottom: 40,
+                    lineHeight: "70px"
+            }}>
+                Mahalle Evi'ne gönüllü kayıt süreci <strong>İstanbul Gönüllüleri</strong> üzerinden sağlanmaktadır. Başvuru için lütfen aşağıda bulunan <strong>Gönüllü Kayıt'a tıklayınız.</strong>
+            </p>
+            <Button style={{
+                margin: "auto",
+                width: 280,
+                marginLeft: "50%",
+                transform: "translateX(-50%)",
+                marginBottom: 120,
+                height: 60,
+                backgroundColor: "#0088CC",
+                boxShadow: "0 0 30px 0 #0088cc99",
+                color: "#fff",
+                fontSize: 22,
+                fontFamily: 'Poppins',
+                fontWeight: 600,
+                borderRadius: 30,
+                border: "none"
+            }}>Gönüllü Kayıt</Button>
             <Footer/>
         </>
     )
@@ -175,6 +243,40 @@ const BlueTitle = (props) => {
         </div>
     )
 }
+
+
+
+const GonullulukTurleriItem = (props) => {
+    const [isMobile, setismobile] = useState(false);
+    const [width, height] = useWindowSize();
+
+
+    useEffect( ()=>{
+        // console.log("w",width,"h",height);
+        if(width<=992) {
+            setismobile(true);
+        } else {
+            setismobile(false);
+        }
+    },[width,height])
+
+    return(
+        <>
+            {
+                isMobile || <Container style={styles1.container}>
+                    <Row style={styles1.row}>
+                        <img style={styles1.image} src={props.img} />
+                        {/* <a style={styles1.link} href="#">Kayıt</a> */}
+                        <h4 style={styles1.title}>{props.title}</h4>
+                        <p style={styles1.paragraph}>{props.paragraph}</p>
+                        {/* <Button style={styles1.button}>Başvur</Button> */}
+                    </Row>
+                </Container>
+            }
+        </>
+    )
+}
+
 
 
 
@@ -248,5 +350,72 @@ const styles = {
         fontWeight: 600,
         padding: 13,
         fontSize: 22
+    }
+}
+
+
+
+const styles1 = {
+    container: {
+        // margin: "60px auto",
+        // padding: 20,
+        // boxShadow: "#00000029 0 0 15px 0px",
+        // borderRadius: 12
+    },
+    row: {
+        display: "block",
+        textAlign: "left",
+        position: "relative",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "start",
+        boxShadow: "#00000029 0 0 15px 0px",
+        padding: 20
+    },
+    image: {
+        height: "auto",
+        margin: -20,
+        width: "calc(100% + 40px)",
+    },
+    link: {
+        color: "#0088CC",
+        fontFamily: "Poppins",
+        fontWeight: 600,
+        fontSize: 16,
+        margin: "20px 0",
+        transform: "translateY(11px)"
+    },
+    title: {
+        color: "#000",
+        fontFamily: "Poppins",
+        fontWeight: 700,
+        fontSize: 18,
+        textAlign: "center",
+        margin: 0,
+        minHeight: 45,
+        marginTop: 50
+    },
+    paragraph: {
+        color: "#606060",
+        textAlign: "center",
+        fontFamily: "Poppins",
+        fontSize: 14,
+        fontWeight: 300,
+        // margin: "20px 0"
+        maring: "5px 0 20px 0px",
+        minHeight: 110
+    },
+    button: {
+        backgroundColor: "#0088CC",
+        borderRadius: 8,
+        color: "#fff",
+        margin: "20px 0",
+        maxWidth: 180,
+        margin: "0 auto",
+        width: "50%",
+        border: "none",
+        fontFamily: "Poppins",
+        fontWeight: 600
     }
 }
