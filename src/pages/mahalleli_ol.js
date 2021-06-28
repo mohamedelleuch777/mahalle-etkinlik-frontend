@@ -46,13 +46,7 @@ return(
             <Menu />
             {/* ---------------------------------------------------- */}
             <Container className="full-width" style={{display:"flex",flexDirection:"column",position:"relative",margin:0}}>
-                <div style={styles.blueTitleContainer}>
-                    <h2 style={styles.lastFont} className="blue-title">
-                        Mahalleli Ol
-                        <hr style={styles.hr1}/>
-                        <hr style={styles.hr2}/>
-                    </h2>
-                </div>
+                <BlueTitle title="Mahalleli Ol"/>
                 <Container>
                     {/* item 1 */}
                     <Row style={{marginBottom:120}}>
@@ -113,6 +107,7 @@ return(
                 </Container>
             </Container>
             <hr style={{borderBottom: "5px solid #CBD7E2", marginTop: 0}} />
+            <BlueTitle title="Gönüllü Ol"/>
             {/* ---------------------------------------------------- */}
             <Footer/>
         </>
@@ -120,6 +115,19 @@ return(
 }
 
 export default MahalleliOl;
+
+
+const BlueTitle = (props) => {
+    return (
+        <div style={styles.blueTitleContainer}>
+            <h2 style={styles.lastFont} className="blue-title">
+                {props.title}
+                <hr style={styles.hr1}/>
+                <hr style={styles.hr2}/>
+            </h2>
+        </div>
+    )
+}
 
 
 

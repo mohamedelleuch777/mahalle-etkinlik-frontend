@@ -18,6 +18,9 @@ import {
     Container,
   } from "reactstrap";
   import beyazmasa from '../assets/img/logo_head@2x.png';
+  import facebook from '../assets/img/facebook.svg';
+  import instagram from '../assets/img/instagram.svg';
+  import twitter from '../assets/img/twitter.svg';
   import youtube from '../assets/img/youtube.svg';
 
   const TopBar = (props) => {
@@ -60,8 +63,9 @@ import {
          {
             isMobile || <div style={styles.main}>
                 <div style={styles.imgContainer}>
-                    <img style={styles.svgItems} src={youtube} alt="beyazmasa logo" />
-                    <img style={styles.svgItems} src={youtube} alt="beyazmasa logo" />
+                    <img style={styles.svgItems} src={facebook} alt="beyazmasa logo" />
+                    <img style={styles.svgItems} src={twitter} alt="beyazmasa logo" />
+                    <img style={styles.svgItems} src={instagram} alt="beyazmasa logo" />
                     <img style={styles.svgItems} src={youtube} alt="beyazmasa logo" />
                     <img src={beyazmasa} alt="beyazmasa logo" />
                 </div>
