@@ -38,12 +38,12 @@ import {
             height: 33,
             display: "flex",
             justifyContent: "space-between",
-            width: 300,
+            width: 400,
             marginLeft: "auto",
             marginRight: "10%"
         },
         svgItems: {
-            width: "unset",
+            width: 19,
             height: 20,
             marginTop: 6
         }

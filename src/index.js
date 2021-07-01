@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import MainPage from './pages/main_page'
 import PresidentPage from './pages/president_page'
 import MahalleliOl from './pages/mahalleli_ol'
+import MahalleAbout from './pages/mahalle_about'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "./assets/css/bootstrap.min.css";
 
@@ -28,6 +29,11 @@ ReactDOM.render(
             path="/mahol"
             render={(props) => <MahalleliOl {...props} />}
           />
+          <Route
+            path="/about"
+            render={(props) => <MahalleAbout {...props} />}
+          />
+
           <Route
             path="/*"
             render={(props) => <Catalog {...props} />}

@@ -70,6 +70,10 @@ import {
                 setselectedMenu(2)
                 break;
             }
+            case "/about": {
+                setselectedMenu(3)
+                break;
+            }
             case "/mahol": {
                 setselectedMenu(4)
                 break;
@@ -82,7 +86,7 @@ import {
         <>
             {/* normal menu for desktop */}
             {
-                isMobile || <Navbar style={{padding:0,height:120,borderBottom: "5px solid #CBD7E2"}}>
+                isMobile || <Navbar style={{padding:0,height:120,borderBottom: "5px solid #CBD7E2",zIndex:100}}>
             
                     <div style= {styles.divContainer}>
                     {/* <Container> */}
@@ -138,14 +142,31 @@ import {
                                 Mahalle Evleri
                             </DropdownToggle>
                             <DropdownMenu>
-                                <DropdownItem header>Header</DropdownItem>
-                                <DropdownItem>Some Action</DropdownItem>
-                                <DropdownItem text>Dropdown Item Text</DropdownItem>
-                                <DropdownItem disabled>Action (disabled)</DropdownItem>
-                                <DropdownItem divider />
-                                <DropdownItem>Foo Action</DropdownItem>
-                                <DropdownItem>Bar Action</DropdownItem>
-                                <DropdownItem>Quo Action</DropdownItem>
+                                <DropdownItem
+                                        onClick={ () => {
+                                            window.location.href = "/about"
+                                        }}
+                                >Hakkımızda</DropdownItem>
+                                <DropdownItem
+                                        onClick={ () => {
+                                            window.location.href = "/about"
+                                        }}
+                                >Mahalle Evlerimiz</DropdownItem>
+                                <DropdownItem
+                                        onClick={ () => {
+                                            window.location.href = "/about"
+                                        }}
+                                >Neler Yapıyoruz</DropdownItem>
+                                <DropdownItem
+                                        onClick={ () => {
+                                            window.location.href = "/about"
+                                        }}
+                                >Haberler ve Duyurlar</DropdownItem>
+                                <DropdownItem
+                                        onClick={ () => {
+                                            window.location.href = "/about"
+                                        }}
+                                >İlkelerimiz</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
 
