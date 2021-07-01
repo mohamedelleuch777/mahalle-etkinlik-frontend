@@ -1,45 +1,23 @@
-cache:
-  paths:
-    - node_modules/
-    - .yarn
-stages:
-  - build
-  - test
-  - deploy
-build:
-  image: node:10
+build-job:
   stage: build
   script:
-    - yarn config set cache-folder .yarn
-    - yarn install --pure-lockfile --cache-folder .yarn
-    - yarn build
-  artifacts:
-    paths:
-      - ./build
-  only:
-    - master
-test:
-  image: node:10
+    - echo "Hello, $GITLAB_USER_LOGIN!"
+
+test-job1:
   stage: test
   script:
-    - echo "Running react test suite......"
-    - yarn test
-  only:
-    - master
-deploy:
-  image: python:latest
-  stage: deploy
-  variables:
-    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
-    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
-    AWS_S3_BUCKET: $AWS_S3_BUCKET
+    - echo "This job tests something"
+
+test-job2:
+  stage: test
   script:
-    - pip install awscli
-    - echo "Uploading to s3://$AWS_S3_BUCKET/$CI_COMMIT_SHORT_SHA"
-    - aws s3 cp ./build/ s3://$AWS_S3_BUCKET/$CI_COMMIT_SHORT_SHA/ --recursive
-    - aws s3 rm s3://$AWS_S3_BUCKET/latest/ --recursive
-    - aws s3 cp s3://$AWS_S3_BUCKET/$CI_COMMIT_SHORT_SHA/ s3://$AWS_S3_BUCKET/latest/ --recursive
-    - aws s3 website s3://$AWS_S3_BUCKET --index-document index.html
-  only:
-    - master
-  when: manual
+    - echo "This job tests something, but takes more time than test-job1."
+    - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
+    - echo "which simulates a test that runs 20 seconds longer than test-job1"
+    - sleep 20
+
+deploy-prod:
+  stage: deploy
+  script:
+    - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+
