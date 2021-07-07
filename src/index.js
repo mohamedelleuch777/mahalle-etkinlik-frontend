@@ -8,6 +8,7 @@ import MainPage from './pages/main_page'
 import PresidentPage from './pages/president_page'
 import MahalleliOl from './pages/mahalleli_ol'
 import MahalleAbout from './pages/mahalle_about'
+import MahalleEvlerimiz from './pages/mahalle_evlerimiz'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "./assets/css/bootstrap.min.css";
 
@@ -32,6 +33,10 @@ ReactDOM.render(
           <Route
             path="/about"
             render={(props) => <MahalleAbout {...props} />}
+          />
+          <Route
+            path="/mahalleevlerimiz"
+            render={(props) => <MahalleEvlerimiz {...props} />}
           />
 
           <Route

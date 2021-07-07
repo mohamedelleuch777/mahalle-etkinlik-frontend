@@ -78,6 +78,10 @@ import {
                 setselectedMenu(4)
                 break;
             }
+            case "/mahalleevlerimiz": {
+                setselectedMenu(4)
+                break;
+            }
         }
     },[])
 
@@ -149,7 +153,7 @@ import {
                                 >Hakkımızda</DropdownItem>
                                 <DropdownItem
                                         onClick={ () => {
-                                            window.location.href = "/about"
+                                            window.location.href = "/mahalleevlerimiz"
                                         }}
                                 >Mahalle Evlerimiz</DropdownItem>
                                 <DropdownItem
