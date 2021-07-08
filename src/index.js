@@ -49,14 +49,14 @@ ReactDOM.render(
             path="/haberler"
             render={(props) => <Haberler {...props} />}
           />
+          <Route
+            path="/haberdetay"
+            render={(props) => <HaberDetay {...props} />}
+          />
 
           <Route
             path="/*"
             render={(props) => <Catalog {...props} />}
-          />
-          <Route
-            path="/haberDetay"
-            render={(props) => <HaberDetay {...props} />}
           />
         </Switch>
       </BrowserRouter>

@@ -1,10 +1,15 @@
 import React from 'react'
+import TopBar from '../components/topbar'
+import Menu from '../components/menu'
+import Footer from '../components/footer'
 
 const HaberDetay = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <TopBar />
+            <Menu />
+            <Footer/>
+        </>
     )
 }
 
