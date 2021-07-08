@@ -240,3 +240,32 @@ ul.list-blue-bullet>li::before {
   color: #fff;
   font-size: 14px;
 }
+
+.nav-tabs .nav-link.active:focus, .nav-tabs .nav-link.active:hover,
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover{
+  border-color: transparent !important;
+}
+
+.news_announcements_image{
+  width: 400px;
+  max-height: 700px;
+  object-fit: contain;
+}
+
+.announcementsActive{
+  background-color: rgb(29, 140, 25) !important;
+}
+
+.hes_code_progress_number{
+  padding: "15px" !important;
+  background-color: "#8F969E" !important;
+  color: "#fff" !important;
+  font-size: "24px" !important;
+  font-weight: "bolder" !important;
+  width: "60px" !important;
+  height: "60px" !important;
+  border-radius: "50%" !important;
+  display: "flex" !important;
+  justify-content: "center" !important;
+  align-items: "center" !important;
+}
