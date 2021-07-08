@@ -103,7 +103,7 @@ const MahalleGaleri = () => {
             ></img>
           </div>
 
-          <div style={{ paddingBottom: "40px" }}>
+          <div style={{ paddingBottom: "160px" }}>
             <MahalleGaleriSlider
               data={data}
               setCurrentImage={setCurrentImage}
