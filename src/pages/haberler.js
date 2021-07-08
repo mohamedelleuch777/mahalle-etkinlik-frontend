@@ -17,6 +17,13 @@ const Haberler = (props) => {
     const [width, height] = useWindowSize();
 
     const styles = {
+        announcementsTitle: {
+            color: "#475677",
+            fontSize: "32px",
+            fontFamily: 'Poppins',
+            margin: "70px 0 50px",
+            fontWeight: "bolder"
+        },
         title: {
             color: "#475677",
             fontSize: 60,
@@ -51,7 +58,7 @@ const Haberler = (props) => {
             justifyContent: "center",
             alignItems: "center"
         },
-        hes_code_progress_title:{
+        hes_code_progress_title: {
             padding: "0",
             width: "70%",
             textAlign: "left",
@@ -279,7 +286,7 @@ const Haberler = (props) => {
                 <div className="news-section-container">
                     <h3>HES Kodumu nasıl alırım ?</h3>
 
-                    <Row style={{marginTop: "60px", marginBottom: "60px", display: "flex", justifyContent: "center"}}>
+                    <Row style={{ marginTop: "60px", marginBottom: "60px", display: "flex", justifyContent: "center" }}>
 
                         <Col lg={3} sm={12} style={styles.announcements}>
                             <div style={styles.hes_code_progress}>
@@ -304,7 +311,12 @@ const Haberler = (props) => {
                             <img className="w-75" src={Announcements} />
                         </Col>
 
-                        <Col lg={3} sm={12} style={styles.announcements}>
+                        <Col lg={3} sm={12} style={styles.announcements} style={{float: "left"}}>
+                            <h3 style={styles.announcementsTitle}>Kod İşlemleri</h3>
+
+                            <p style={{fontSize: "19px", color: "#333"}}>
+                                HES ugulamasında anasayfa açılır, HES uygulaması üzerinde HES KODU OLUŞTURMA ekranına geçiş yapılır. <br /> <br /> Butona basılınca kod oluşturma ekranına geçiş yapılır.
+                            </p>
                         </Col>
                     </Row>
 
