@@ -10,6 +10,7 @@ import MahalleliOl from './pages/mahalleli_ol'
 import MahalleAbout from './pages/mahalle_about'
 import MahalleEvlerimiz from './pages/mahalle_evlerimiz'
 import MahalleGaleri from './pages/mahalle_galeri';
+import Haberler from './pages/haberler';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "./assets/css/bootstrap.min.css";
 
@@ -42,6 +43,10 @@ ReactDOM.render(
           <Route
             path="/mahalleevlerimizgaleri"
             render={(props) => <MahalleGaleri {...props} />}
+          />
+          <Route
+            path="/haberler"
+            render={(props) => <Haberler {...props} />}
           />
 
           <Route
