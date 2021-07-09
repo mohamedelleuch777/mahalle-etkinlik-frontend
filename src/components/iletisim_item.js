@@ -24,8 +24,6 @@ const IletisimItem = (props) => {
     const [isMobile, setismobile] = useState(false);
     const [width, height] = useWindowSize();
 
-    
-
     useEffect( ()=>{
         // console.log("w",width,"h",height);
         if(width<=992) {
