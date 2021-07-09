@@ -18,11 +18,10 @@ const Haberler = (props) => {
     const [isMobile, setismobile] = useState(false);
     const [width, height] = useWindowSize();
     const [activeTab, setActiveTab] = useState('1');
-    const [announcements, setAnnouncements ] = useState(1)
+    const [activeNumber, setActiveNumber] = useState(1)
 
     const toggle = tab => {
         if (activeTab !== tab) setActiveTab(tab);
-        setAnnouncements(tab)
     }
 
     const styles = {
@@ -52,19 +51,6 @@ const Haberler = (props) => {
             display: "flex",
             justifyContent: "space-between",
             padding: "10px 0",
-            alignItems: "center"
-        },
-        hes_code_progress_number: {
-            padding: "15px",
-            backgroundColor: "#8F969E",
-            color: "#fff",
-            fontSize: "24px",
-            fontWeight: "bolder",
-            width: "60px",
-            height: "60px",
-            borderRadius: "50%",
-            display: "flex",
-            justifyContent: "center",
             alignItems: "center"
         },
         hes_code_progress_title: {
@@ -101,7 +87,6 @@ const Haberler = (props) => {
             setismobile(false);
         }
     }, [width, height])
-
 
 
     return (
@@ -312,10 +297,10 @@ const Haberler = (props) => {
                                 <NavItem>
                                     <NavLink
                                         className={classnames({ active: activeTab === '1' })}
-                                        onClick={() => { toggle('1'); }}
+                                        onClick={() => { toggle('1'); setActiveNumber(1); }}
                                     >
                                         <div style={styles.hes_code_progress}>
-                                            <div style={styles.hes_code_progress_number}>1</div>
+                                            <div className="hes_code_progress_number" style={{backgroundColor: activeNumber === 1 ? "rgb(29, 140, 25)" : "#8F969E"}}>1</div>
                                             <div style={styles.hes_code_progress_title}>Kod İşlemleri</div>
                                         </div>
                                     </NavLink>
@@ -323,10 +308,10 @@ const Haberler = (props) => {
                                 <NavItem>
                                     <NavLink
                                         className={classnames({ active: activeTab === '2' })}
-                                        onClick={() => { toggle('2'); }}
+                                        onClick={() => { toggle('2'); setActiveNumber(2); }}
                                     >
                                         <div style={styles.hes_code_progress}>
-                                            <div style={styles.hes_code_progress_number}>2</div>
+                                            <div className="hes_code_progress_number" style={{backgroundColor: activeNumber === 2 ? "rgb(29, 140, 25)" : "#8F969E"}}>2</div>
                                             <div style={styles.hes_code_progress_title}>Kodu Oluştur</div>
                                         </div>
                                     </NavLink>
@@ -334,10 +319,10 @@ const Haberler = (props) => {
                                 <NavItem>
                                     <NavLink
                                         className={classnames({ active: activeTab === '3' })}
-                                        onClick={() => { toggle('3'); }}
+                                        onClick={() => { toggle('3'); setActiveNumber(3); }}
                                     >
                                         <div style={styles.hes_code_progress}>
-                                            <div style={styles.hes_code_progress_number}>3</div>
+                                            <div className="hes_code_progress_number" style={{backgroundColor: activeNumber === 3 ? "rgb(29, 140, 25)" : "#8F969E"}}>3</div>
                                             <div style={styles.hes_code_progress_title}>Süre</div>
                                         </div>
                                     </NavLink>
@@ -345,10 +330,10 @@ const Haberler = (props) => {
                                 <NavItem>
                                     <NavLink
                                         className={classnames({ active: activeTab === '4' })}
-                                        onClick={() => { toggle('4'); }}
+                                        onClick={() => { toggle('4'); setActiveNumber(4); }}
                                     >
                                         <div style={styles.hes_code_progress}>
-                                            <div style={styles.hes_code_progress_number}>4</div>
+                                            <div className="hes_code_progress_number" style={{backgroundColor: activeNumber === 4 ? "rgb(29, 140, 25)" : "#8F969E"}}>4</div>
                                             <div style={styles.hes_code_progress_title}>HES kodu</div>
                                         </div>
                                     </NavLink>
@@ -443,61 +428,3 @@ const Haberler = (props) => {
 }
 
 export default Haberler;
-
-
-const styles1 = {
-    // blueTitleContainer: {
-    //     width: "100% 0",
-    //     textAlign: "center",
-    //     margin: 100
-    // },
-    // //continue from here
-    // lastFont: {
-    //     fontSize: 40,
-    //     fontWeight: 600,
-    //     fontFamily: "Poppins",
-    //     color: "#0088CC",
-    //     width: "fit-content",
-    //     margin: "auto",
-    //     position: "relative"
-    // },
-    // hr1: {
-    //     border: "2px solid #0088CC"
-    // },
-    // hr2: {
-    //     position: "absolute",
-    //     top: 44,
-    //     left: "50%",
-    //     transform: "translateX(-50%)",
-    //     width: 50,
-    //     border: "6px solid #0088CC",
-    //     borderRadius: 6
-    // },
-    img: {
-        width: "100%"
-    },
-    // imgBg: {
-    //     position: "absolute",
-    //     zIndex: -1,
-    //     // transform: "translate(-40%, -40%)"
-    // },
-    title: {
-        color: "#030D28",
-        fontFamily: "Poppins",
-        fontWeight: 600,
-        fontSize: 28,
-        textAlign: "left",
-        // margin: 0,
-        // minHeight: 45
-    },
-    paragraph: {
-        color: "#333333",
-        fontFamily: "Poppins",
-        fontWeight: 400,
-        fontSize: 20,
-        textAlign: "left",
-        display: "flex",
-        flexDirection: "column",
-        position: "relative"
-    }
-}

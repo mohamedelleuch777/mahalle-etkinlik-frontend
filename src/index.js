@@ -12,6 +12,7 @@ import MahalleEvlerimiz from './pages/mahalle_evlerimiz'
 import MahalleGaleri from './pages/mahalle_galeri';
 import Haberler from './pages/haberler';
 import HaberDetay from './pages/haberDetay';
+import Ilkelerimiz from './pages/ilkelerimiz';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "./assets/css/bootstrap.min.css";
 
@@ -52,6 +53,10 @@ ReactDOM.render(
           <Route
             path="/haberdetay"
             render={(props) => <HaberDetay {...props} />}
+          />
+           <Route
+            path="/ilkelerimiz"
+            render={(props) => <Ilkelerimiz {...props} />}
           />
 
           <Route
