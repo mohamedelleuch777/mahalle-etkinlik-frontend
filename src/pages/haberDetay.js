@@ -25,7 +25,11 @@ const HaberDetay = () => {
           </div>
 
           <div className="newsDetail-info">
-            <small>İBB / Haber ve Duyurular / 14.06.2021</small>
+            <ul style={styles.path}>
+                <li style={styles.item}>IBB</li>
+                <li className="path-item" style={styles.item}>Haber ve Duyurular</li>
+                <li className="path-item" style={styles.item}>14.06.2021</li>
+            </ul>
           </div>
 
           <div className="newsDetail-content-container">
@@ -236,3 +240,22 @@ const HaberDetay = () => {
 };
 
 export default HaberDetay;
+
+
+
+const styles = {
+  path: {
+      listStyle: "none",
+      display: "flex",
+      padding: 0
+  },
+  item: {
+      // marginLeft: 15,
+      color: "#999999",
+      fontSize: 12,
+      fontFamily: 'Poppins',
+      textAlign: "center",
+      // margin: "60px 0",
+      fontWeight: 500
+  }
+}

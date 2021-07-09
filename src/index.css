@@ -160,6 +160,12 @@ ul.list-blue-bullet>li::before {
   transform: translate(-20px, 3px);
 }
 
+.path-item::before {
+  content: "/";
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
 @media screen and (min-width: 1350px) {
   .container {
     max-width: 1350px !important;
