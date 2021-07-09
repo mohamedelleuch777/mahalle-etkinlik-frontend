@@ -50,7 +50,7 @@ import {
     }
 
     useEffect( ()=>{
-        console.log("w",width,"h",height);
+        // console.log("w",width,"h",height);
         if(width<=992) {
             setismobile(true);
         } else {
