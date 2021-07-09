@@ -82,6 +82,10 @@ import {
                 setselectedMenu(4)
                 break;
             }
+            case "/haberler": {
+                setselectedMenu(3)
+                break;
+            }
         }
     },[])
 
@@ -163,12 +167,12 @@ import {
                                 >Neler Yapıyoruz</DropdownItem>
                                 <DropdownItem
                                         onClick={ () => {
-                                            window.location.href = "/about"
+                                            window.location.href = "/haberler"
                                         }}
                                 >Haberler ve Duyurlar</DropdownItem>
                                 <DropdownItem
                                         onClick={ () => {
-                                            window.location.href = "/about"
+                                            window.location.href = "/haberler"
                                         }}
                                 >İlkelerimiz</DropdownItem>
                             </DropdownMenu>
