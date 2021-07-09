@@ -467,7 +467,7 @@ ul.list-blue-bullet>li::before {
   color: #03160A;
 }
 
-.sssAccordionContainer svg{
+.sssAccordionContainer svg {
   color: #7294D5;
 }
 
@@ -488,6 +488,21 @@ ul.list-blue-bullet>li::before {
   padding: 0 25px;
 }
 
+
+.cardContainer {
+  background-color: #fff;
+  border-radius: 4px;
+  width: 70%;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cardContainer {
+    background-color: #fff;
+    border-radius: 4px;
+    width: 90%;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .accordionContentContainer {
     flex-flow: column;
@@ -495,5 +510,10 @@ ul.list-blue-bullet>li::before {
   }
   .accordionContentContainer .accordion_content_text {
     padding: 15px 0;
+  }
+  .cardContainer {
+    background-color: #fff;
+    border-radius: 4px;
+    width: 100%;
   }
 }

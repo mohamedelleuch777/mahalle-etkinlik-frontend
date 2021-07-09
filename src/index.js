@@ -14,6 +14,8 @@ import Haberler from './pages/haberler';
 import HaberDetay from './pages/haberDetay';
 import Ilkelerimiz from './pages/ilkelerimiz';
 import Sss from './pages/sss';
+import CocukKayitFormu from './pages/cocukKayitFormu';
+
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "./assets/css/bootstrap.min.css";
 
@@ -63,6 +65,11 @@ ReactDOM.render(
         <Route
           path="/sikcasorulansorular"
           render={(props) => <Sss {...props} />}
+        />
+
+        <Route
+          path="/cocukKayitFormu"
+          render={(props) => <CocukKayitFormu {...props} />}
         />
 
         <Route
