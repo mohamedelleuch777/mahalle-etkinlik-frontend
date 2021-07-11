@@ -7,7 +7,7 @@ import Menu from '../components/menu'
 import Footer from '../components/footer'
 import SliderTop from '../components/slider_top'
 import { Container, Row, Col } from 'reactstrap';
-
+import Combobox from '../components/combo_box'
 
 import img_clip from '../assets/img/image 12.png'
 
@@ -31,6 +31,22 @@ const MahalleAbout = (props) => {
             fontFamily: 'Poppins',
             textAlign: "center",
             margin: "40px 0"
+        },
+        subtitle: {
+            fontSize: 29,
+            color: "#475677",
+            fontFamily: 'Poppins',
+            textAlign: "left",
+            
+        },
+        title2: {
+            fontSize: 17,
+            color: "#7D8597",
+            fontFamily: 'Poppins',
+            
+        },
+        menu:{
+            width: 400
         }
     }
 
@@ -50,7 +66,16 @@ return(
         {/* ---------------------------------------------------- */}
         <Container>
             <h2 style={styles.title}>Mahalle Evleri Listesi</h2>
-         
+            <Row> 
+                <Col md="6">
+                <h4 style={styles.subtitle}>Mahalle Evleri Listesi</h4>
+                <p style={styles.title2}>Listesi Listeden başvurmak istediğiniz Mahalle Evini seçebilirsiniz.</p>
+                <Combobox style={{width:450}}/>
+                </Col>   
+                <Col md="6">
+                </Col>   
+            </Row>
+        
         </Container>
         <hr style={{borderBottom: "5px solid #CBD7E2", marginTop: 80}} />
         

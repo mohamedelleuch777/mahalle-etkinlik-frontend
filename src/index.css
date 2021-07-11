@@ -101,6 +101,27 @@ code {
   font-size: 200%;
 }
 
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: rgb(255, 255, 255) transparent transparent transparent;
+}
+
+.select-items:hover {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+
 @media screen and (min-width: 1280px) {
   .slider-carousel .carousel-caption h3 {
     font-size: 36px;
